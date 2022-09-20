@@ -8,7 +8,7 @@ export const TopBar = () => {
   const setUi = useStore((state) => state.setUi)
   const ui = useStore((state) => state.ui)
 
-  const [value, setValue] = React.useState(3)
+  const [value, setValue] = React.useState(0)
   useEffect(() => {
     console.log(ui.nav)
     setUi(value)
@@ -23,7 +23,7 @@ export const TopBar = () => {
       sx={{
         width: '100%',
         position: 'absolute',
-        zIndex: 1,
+        zIndex: 2,
       }}
     >
       <Box

@@ -1,7 +1,13 @@
-import { OrbitControls, PerspectiveCamera, Stars } from '@react-three/drei'
+import {
+  Html,
+  OrbitControls,
+  PerspectiveCamera,
+  Stars,
+} from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import React, { useRef } from 'react'
 import { TextureLoader } from 'three'
+import { About } from '../components/sections/About'
 import { useStore } from '../store'
 export const SolarSistem = () => {
   const { nav } = useStore((state) => state.ui)
