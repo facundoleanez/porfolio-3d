@@ -8,7 +8,7 @@ export const TopBar = () => {
   const setUi = useStore((state) => state.setUi)
   const ui = useStore((state) => state.ui)
 
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = React.useState(3)
   useEffect(() => {
     console.log(ui.nav)
     setUi(value)

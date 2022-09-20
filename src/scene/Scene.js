@@ -8,9 +8,10 @@ export const Scene = () => {
   return (
     <Canvas>
       <color attach='background' args={['#191920']} />
-      <ambientLight intensity={0.02} />
+      <ambientLight intensity={0.035} />
       <SolarSistem />
       <pointLight />
+      <Stars radius={2100} />
     </Canvas>
   )
 }

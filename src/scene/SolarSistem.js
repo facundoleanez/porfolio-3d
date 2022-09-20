@@ -20,11 +20,11 @@ export const SolarSistem = () => {
 
   //actions
   const focusCamera = (focusRef, distance) => {
-    cameraRef.current.position.z = focusRef.current.position.z + 4
+    cameraRef.current.position.z = focusRef.current.position.z + 5
     cameraRef.current.position.x = focusRef.current.position.x
   }
   const rotation = (planetRef, radius, velocity) => {
-    planetRef.current.rotation.y += 0.02
+    planetRef.current.rotation.y += 0.01
     planetRef.current.position.z = Math.cos(timeCounter + velocity) * radius
     planetRef.current.position.x = Math.sin(timeCounter + velocity) * radius
   }
@@ -32,7 +32,7 @@ export const SolarSistem = () => {
   let timeCounter = 0
 
   useFrame(() => {
-    timeCounter += 0.01
+    timeCounter += 0.03
 
     rotation(mercuryRef, 300, 0)
     rotation(venusRef, -600, 0.03)
@@ -52,13 +52,21 @@ export const SolarSistem = () => {
       case 2:
         focusCamera(marsRef)
         break
+      case 3:
+        cameraRef.current.position.z = Math.cos(timeCounter * 0.5) * 2000
+        break
       default:
         break
     }
   })
   return (
     <group>
-      <PerspectiveCamera name='caca' ref={cameraRef} makeDefault />
+      <PerspectiveCamera
+        ref={cameraRef}
+        makeDefault
+        far={5500}
+        position={[0, 0, 0]}
+      />
       {/* <OrbitControls /> */}
       <mesh ref={uranusRef}>
         <sphereGeometry />
@@ -78,19 +86,19 @@ export const SolarSistem = () => {
           map={new TextureLoader().load(require('./textures/jupitermap.jpg'))}
         />
       </mesh>
+
       <mesh ref={marsRef}>
         <sphereGeometry args={[1, 64, 32]} />
         <meshStandardMaterial
           map={new TextureLoader().load(require('./textures/marsmap.jpg'))}
         />
-        <Stars />
       </mesh>
       <mesh ref={earthRef}>
         <sphereGeometry args={[1, 64, 32]} />
         <meshStandardMaterial
           map={new TextureLoader().load(require('./textures/earthmap1k.jpg'))}
         />
-        <Stars />
+
         <mesh ref={moonRef} scale={0.1}>
           <sphereGeometry />
           <meshStandardMaterial
@@ -103,7 +111,6 @@ export const SolarSistem = () => {
         <meshStandardMaterial
           map={new TextureLoader().load(require('./textures/venusmap.jpg'))}
         />
-        <Stars />
       </mesh>
       <mesh ref={mercuryRef}>
         <sphereGeometry args={[1, 64, 32]} />
@@ -111,7 +118,7 @@ export const SolarSistem = () => {
           map={new TextureLoader().load(require('./textures/mercurymap.jpg'))}
         />
       </mesh>
-      <mesh scale={4} ref={sunRef}>
+      <mesh scale={10} ref={sunRef}>
         <sphereGeometry />
         <meshStandardMaterial
           map={new TextureLoader().load(require('./textures/sunmap.jpg'))}
