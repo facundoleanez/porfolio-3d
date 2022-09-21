@@ -14,6 +14,7 @@ export const About = () => {
     <Card
       sx={{
         opacity: 0.5,
+        maxWidth: 600,
       }}
     >
       <Box sx={{ m: 3, border: '1px solid', borderColor: 'primary.main' }}>

@@ -10,7 +10,6 @@ export const TopBar = () => {
 
   const [value, setValue] = React.useState(0)
   useEffect(() => {
-    console.log(ui.nav)
     setUi(value)
   }, [value])
 

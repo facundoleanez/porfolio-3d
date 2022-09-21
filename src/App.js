@@ -5,8 +5,13 @@ import { TopBar } from './components/TopBar'
 import { Scene } from './scene/Scene'
 import { About } from './components/sections/About'
 import { Sections } from './components/Sections'
+import { Container } from '@mui/system'
 
 const darkTheme = createTheme({
+  typography: {
+    fontFamily: 'Rajdhani',
+    fontSize: 20,
+  },
   palette: {
     mode: 'dark',
     primary: {
