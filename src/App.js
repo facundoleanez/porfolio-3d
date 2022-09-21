@@ -9,6 +9,9 @@ import { Sections } from './components/Sections'
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
+    primary: {
+      main: '#5CDEFE',
+    },
   },
 })
 
