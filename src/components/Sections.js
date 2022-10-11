@@ -9,7 +9,10 @@ import { Projects } from './sections/Projects'
 export const Sections = () => {
   const { nav } = useStore((state) => state.ui)
   return (
-    <Box
+    <>
+    {
+      nav !== 'explore' && (
+        <Box
       sx={{
         height: '100%',
         width: '100%',
@@ -23,6 +26,8 @@ export const Sections = () => {
       {nav === 0 && <About />}
       {nav === 1 && <Projects />}
       {nav === 2 && <Contact />}
-    </Box>
+    </Box>)
+    }
+    </>
   )
 }
