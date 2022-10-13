@@ -3,26 +3,34 @@ import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
-import SaveIcon from "@mui/icons-material/Save";
-import PrintIcon from "@mui/icons-material/Print";
-import ShareIcon from "@mui/icons-material/Share";
 import { useStore } from "../store";
 import { IoMdPlanet } from "react-icons/io";
+import { BsFillSunFill } from "react-icons/bs";
+import { ImEarth } from "react-icons/im";
+import { SiGoogleearth } from "react-icons/si";
+import { GiJupiter } from "react-icons/gi";
+import { GiEarthAsiaOceania } from "react-icons/gi";
+import { WiMoonAltWaningGibbous2 } from "react-icons/wi";
+import { WiMoonFull } from "react-icons/wi";
 const actions = [
-  { icon: <IoMdPlanet />, name: "Sun" },
-  { icon: <IoMdPlanet />, name: "Mercury" },
-  { icon: <IoMdPlanet />, name: "Venus" },
-  { icon: <IoMdPlanet />, name: "Earth" },
-  { icon: <IoMdPlanet />, name: "Mars" },
-  { icon: <IoMdPlanet />, name: "Jupiter" },
+  { icon: <BsFillSunFill />, name: "Sun" },
+  { icon: <WiMoonFull />, name: "Mercury" },
+  { icon: <WiMoonAltWaningGibbous2 />, name: "Venus" },
+  { icon: <ImEarth />, name: "Earth" },
+  { icon: <GiEarthAsiaOceania />, name: "Mars" },
+  { icon: <GiJupiter />, name: "Jupiter" },
   { icon: <IoMdPlanet />, name: "Saturn" },
-  { icon: <IoMdPlanet />, name: "Uranus" },
-  { icon: <IoMdPlanet />, name: "Neptune" },
-  { icon: <IoMdPlanet />, name: "Pluto" },
+  { icon: <SiGoogleearth />, name: "Uranus" },
+  { icon: <WiMoonAltWaningGibbous2 />, name: "Neptune" },
+  { icon: <WiMoonFull />, name: "Pluto" },
 ];
-
 export default function DialButton() {
-  const setUi = useStore((state) => state.setUi);
+  const { setUiPlanet, setUiScreen } = useStore((state) => state);
+
+  const handleClickPlanets = (name, index) => {
+    setUiPlanet(index);
+    setUiScreen(name);
+  };
   return (
     <Box
       sx={{
@@ -31,14 +39,15 @@ export default function DialButton() {
         left: -10,
         bottom: 10,
         zIndex: 2,
-        height: 320,
-        transform: "translateZ(0px)",
-        flexGrow: 1,
       }}
     >
       <SpeedDial
         ariaLabel="SpeedDial basic example"
-        sx={{ position: "absolute", bottom: 16, right: 16 }}
+        sx={{
+          position: "absolute",
+          bottom: 16,
+          right: 16,
+        }}
         icon={<SpeedDialIcon />}
       >
         {actions.map((action, index) => (
@@ -46,7 +55,7 @@ export default function DialButton() {
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
-            onClick={() => setUi(index)}
+            onClick={() => handleClickPlanets(action.name, index)}
           />
         ))}
       </SpeedDial>

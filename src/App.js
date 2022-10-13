@@ -3,11 +3,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { Box } from "@mui/material";
 import { TopBar } from "./components/TopBar";
 import { Scene } from "./scene/Scene";
-import { About } from "./components/sections/About";
 import { Sections } from "./components/Sections";
-import { Container } from "@mui/system";
-import { BotomBar } from "./components/BotomBar";
 import DialButton from "./components/DialButton";
+import { PlanetInfo } from "./components/PlanetInfo";
 
 const darkTheme = createTheme({
   typography: {
@@ -31,6 +29,7 @@ function App() {
         <Sections />
 
         <Scene />
+        <PlanetInfo />
         <DialButton />
       </Box>
     </ThemeProvider>

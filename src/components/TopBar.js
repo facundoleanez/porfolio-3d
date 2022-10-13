@@ -1,27 +1,39 @@
-import React, { useEffect } from 'react'
-import Tabs from '@mui/material/Tabs'
-import Tab from '@mui/material/Tab'
-import Box from '@mui/material/Box'
-import { useStore } from '../store'
+import React, { useEffect } from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import { useStore } from "../store";
 
 export const TopBar = () => {
-  const setUi = useStore((state) => state.setUi)
-  const ui = useStore((state) => state.ui)
+  const { setUiPlanet, setUiScreen } = useStore((state) => state);
 
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = React.useState(0);
+  const setScreen = () => {
+    switch (value) {
+      case 0:
+        return "about";
+      case 1:
+        return "projects";
+      case 2:
+        return "contact";
+      default:
+        break;
+    }
+  };
   useEffect(() => {
-    setUi(value)
-  }, [value])
+    setUiPlanet(value + 1);
+    setUiScreen(setScreen());
+  }, [value]);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
+    setValue(newValue);
+  };
 
   return (
     <Box
       sx={{
-        width: '100%',
-        position: 'absolute',
+        width: "100%",
+        position: "absolute",
         zIndex: 2,
       }}
     >
@@ -29,22 +41,22 @@ export const TopBar = () => {
         sx={{
           borderBottom: 1,
           marginTop: 3,
-          borderColor: 'divider',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          borderColor: "divider",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label='basic tabs example'
+          aria-label="basic tabs example"
         >
-          <Tab label='About me' />
-          <Tab label='Projects' />
-          <Tab label='Contact' />
+          <Tab label="About me" />
+          <Tab label="Projects" />
+          <Tab label="Contact" />
         </Tabs>
       </Box>
     </Box>
-  )
-}
+  );
+};

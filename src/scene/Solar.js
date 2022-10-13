@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { OrbitControls, PerspectiveCamera, Trail } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { useStore } from "../store";
@@ -18,13 +18,14 @@ const Planet = (props) => {
             require(`./textures/${props.name}map.jpg`)
           )}
         />
+        {props.children}
       </mesh>
     </group>
   );
 };
 
 export const Solar = () => {
-  const { nav } = useStore((state) => state.ui);
+  const { planet } = useStore((state) => state.ui);
   const setPositionCamera = (distance, zPosition) => {
     if (zPosition > distance) {
       cameraRef.current.position.z -= 0.3;
@@ -35,7 +36,7 @@ export const Solar = () => {
   const cameraRef = useRef();
   useFrame(() => {
     const zPosition = cameraRef.current.position.z;
-    switch (nav) {
+    switch (planet) {
       case 0:
         setPositionCamera(5, zPosition);
         break;
@@ -74,13 +75,16 @@ export const Solar = () => {
     <group>
       {/* {nav === "explore" && <OrbitControls />} */}
       <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 0, 5]} />
+
       <Planet name={"pluto"} position={[0, 0, 90]} />
       <Planet name={"neptune"} position={[0, 0, 80]} />
       <Planet name={"uranus"} position={[0, 0, 70]} />
       <Planet name={"saturn"} position={[0, 0, 60]} />
       <Planet name={"jupiter"} position={[0, 0, 50]} />
       <Planet name={"mars"} position={[0, 0, 40]} />
-      <Planet name={"earth"} position={[0, 0, 30]} />
+      <Planet name={"earth"} position={[0, 0, 30]}>
+        <Planet name={"moon"} position={[0, 0, 3]} scale={0.1} />
+      </Planet>
       <Planet name={"venus"} position={[0, 0, 20]} />
       <Planet name={"mercury"} position={[0, 0, 10]} />
       <Planet name={"sun"} position={[0, 0, 0]} />
