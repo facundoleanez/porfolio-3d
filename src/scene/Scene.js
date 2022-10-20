@@ -10,7 +10,7 @@ export const Scene = () => {
       <ambientLight intensity={0.03} />
       <color attach="background" args={["#191920"]} />
       <Solar />
-      <pointLight position={[100, 0, 100]} intensity={2} />
+      <pointLight position={[100, 0.4, 100]} intensity={2} />
       <Stars radius={200} />
     </Canvas>
   );

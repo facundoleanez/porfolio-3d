@@ -10,6 +10,7 @@ export const PlanetInfo = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   const isVisible = () => {
     switch (screen) {
       case "about":
@@ -22,6 +23,7 @@ export const PlanetInfo = () => {
         return false;
     }
   };
+  
   return (
     <>
       {isVisible() ? (

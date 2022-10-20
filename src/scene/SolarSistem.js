@@ -3,6 +3,9 @@ import { useFrame } from "@react-three/fiber";
 import React, { createRef, forwardRef, useRef } from "react";
 import { TextureLoader } from "three";
 import { useStore } from "../store";
+
+
+
 export const SolarSistem = () => {
   const { nav } = useStore((state) => state.ui);
 

@@ -50,7 +50,10 @@ export const Contact = () => {
           textAlign: "center",
         }}
       >
-        <CardHeader title={<TypeWriter text={"Seend me a message"} />} />
+        <CardHeader
+          sx={{ display: { xs: "none", sm: "block" } }}
+          title={<TypeWriter text={"Seend me a message"} />}
+        />
         <CardContent>
           <form
             onSubmit={handleSubmitMessage}
@@ -66,7 +69,7 @@ export const Contact = () => {
               id="outlined-basic"
               label={<TypeWriter text={"Naame"} />}
               variant="outlined"
-              sx={{ my: 2 }}
+              sx={{ my: { md: 1 } }}
             />
             <TextField
               value={user_email}
@@ -75,7 +78,7 @@ export const Contact = () => {
               id="outlined-basic"
               label={<TypeWriter text={"Eemail"} />}
               variant="outlined"
-              sx={{ my: 2 }}
+              sx={{ my: { md: 1 } }}
               type="email"
             />
             <TextField
@@ -87,15 +90,15 @@ export const Contact = () => {
               rows={5}
               label={<TypeWriter text={"Meessage"} />}
               variant="outlined"
-              sx={{ my: 2 }}
+              sx={{ my: { md: 1 } }}
             />
             <Tooltip title="This will send to my email adress">
-              <Button variant="contained" type="submit">
+              <Button sx={{ my: { md: 1 } }} variant="contained" type="submit">
                 <Typography>send</Typography>
               </Button>
             </Tooltip>
           </form>
-          <Box my={2} sx={{ display: "flex", justifyContent: "space-around" }}>
+          <Box my={1} sx={{ display: "flex", justifyContent: "space-around" }}>
             <Button href="https://www.linkedin.com/in/facundoleanez/">
               <AiOutlineLinkedin size={40} />
             </Button>
