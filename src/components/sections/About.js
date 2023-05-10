@@ -3,8 +3,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  Paper,
-  Typography,
 } from '@mui/material'
 import React from 'react'
 import { TypeWriter } from '../TypeWriter'
@@ -13,30 +11,30 @@ export const About = () => {
   return (
     <Card
       sx={{
-        opacity: 0.5,
+        opacity: 0.7,
         maxWidth: 600,
       }}
     >
       <Box sx={{ m: 3, border: '1px solid', borderColor: 'primary.main' }}>
         <CardHeader
-          title={<TypeWriter text={'Name: Facundo Leanez'} />}
-          subheader={<TypeWriter text={'Age: 29'} />}
+          title={<TypeWriter text={'Naame: Facundo Leanez'} />}
+          subheader={<TypeWriter text={'Agge: 30'} />}
         />
         <CardContent>
-          <TypeWriter text={'Titile: Developer'} />
+          <TypeWriter text={'Tiitile: Front end and Mobile Developer'} />
         </CardContent>
         <CardContent>
           <TypeWriter
             text={
-              'Description: Pationate about front end and grahics. Enthusiastic and motivated with with high attention to detail'
+              'Deescription: Pationate about front end and grahics. Enthusiastic and motivated with with high attention to detail'
             }
           />
         </CardContent>
         <CardContent>
-          <TypeWriter text={'Hobbie: 3d art and video game desing'} />
+          <TypeWriter text={'Hoobbie: 3d art and video game desing'} />
         </CardContent>
         <CardContent>
-          <TypeWriter text={'Welcome to my porfolio'} />
+          <TypeWriter text={'Weelcome to my porfolio'} />
         </CardContent>
       </Box>
     </Card>

@@ -31,6 +31,7 @@ export const Solar = () => {
   const setPositionCamera = (distance, zPosition) => {
     if (zPosition > distance) {
       cameraRef.current.position.z -= 0.3;
+      // cameraRef.current.position.y +=0.1
     } else if (zPosition < distance - 1) {
       cameraRef.current.position.z += 0.1;
     }
