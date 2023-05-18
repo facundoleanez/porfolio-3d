@@ -7,12 +7,15 @@ export const LaTierra = () => {
       Early learning interacive e-book
       <br />
       Site: -
-      <Link href='https://latierradeyhari.vercel.app/'>
+      <Link target='_blank' href='https://latierradeyhari.vercel.app/'>
         latierradeyhari.vercel.app
       </Link>
       <br />
       Github: -
-      <Link href='https://github.com/facundoleanez/latierradeyhari'>
+      <Link
+        target='_blank'
+        href='https://github.com/facundoleanez/latierradeyhari'
+      >
         /facundoleanez/latierradeyhari
       </Link>
       <br />

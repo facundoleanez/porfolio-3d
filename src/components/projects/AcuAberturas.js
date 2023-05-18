@@ -7,12 +7,15 @@ export const AcuAberturas = () => {
       Corporate web page for a joinery company
       <br />
       Site: -
-      <Link href='https://acuaberturas.vercel.app/'>
+      <Link target='_blank' href='https://acuaberturas.vercel.app/'>
         acuaberturas.vercel.app
       </Link>
       <br />
       Github: -
-      <Link href='https://github.com/facundoleanez/acuaberturas'>
+      <Link
+        target='_blank'
+        href='https://github.com/facundoleanez/acuaberturas'
+      >
         /facundoleanez/acuaberturas
       </Link>
       <br />

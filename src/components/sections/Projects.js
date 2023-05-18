@@ -5,12 +5,16 @@ import {
   AccordionSummary,
   Box,
   Card,
+  CardMedia,
+  Link,
   Typography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Playnder } from '../projects/Playnder';
 import { AcuAberturas } from '../projects/AcuAberturas';
 import { LaTierra } from '../projects/LaTierra';
+import acuaberturas from '../../images/acuaberturas.jpg';
+import latierra from '../../images/latierra.jpg';
 
 export const Projects = () => {
   const [expanded, setExpanded] = React.useState(false);
@@ -26,7 +30,7 @@ export const Projects = () => {
       }}
     >
       <Box sx={{ m: 3, border: '1px solid', borderColor: 'primary.main' }}>
-        <Accordion
+        {/* <Accordion
           expanded={expanded === 'panel1'}
           onChange={handleChange('panel1')}
         >
@@ -58,7 +62,7 @@ export const Projects = () => {
               sit amet egestas eros, vitae egestas augue. Duis vel est augue.
             </Typography>
           </AccordionDetails>
-        </Accordion>
+        </Accordion> */}
         {/* -------------------------------------------- */}
         <Accordion
           expanded={expanded === 'panel3'}
@@ -72,6 +76,9 @@ export const Projects = () => {
             Interactive e-book
           </AccordionSummary>
           <AccordionDetails>
+            <Link target='_blank' href='https://latierradeyhari.vercel.app/'>
+              <CardMedia component='img' image={latierra} alt='latierra' />
+            </Link>
             <LaTierra />
           </AccordionDetails>
         </Accordion>
@@ -88,6 +95,15 @@ export const Projects = () => {
             Landing page
           </AccordionSummary>
           <AccordionDetails>
+            <Link target='_blank' href='https://acuaberturas.vercel.app/'>
+              <CardMedia
+                component='img'
+                // height='194'
+                image={acuaberturas}
+                alt='acuaberturas'
+                sx={{ m: 0, p: 0, zIndex: 2 }}
+              />
+            </Link>
             <AcuAberturas />
           </AccordionDetails>
         </Accordion>
