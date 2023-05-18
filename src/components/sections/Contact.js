@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Box,
   Button,
@@ -8,16 +8,16 @@ import {
   TextField,
   Tooltip,
   Typography,
-} from "@mui/material";
-import { TypeWriter } from "../TypeWriter";
-import { AiOutlineLinkedin, AiFillGithub } from "react-icons/ai";
-import { useForm } from "../../hooks/useForm";
-import emailjs from "emailjs-com";
+} from '@mui/material';
+import { TypeWriter } from '../TypeWriter';
+import { AiOutlineLinkedin, AiFillGithub } from 'react-icons/ai';
+import { useForm } from '../../hooks/useForm';
+import emailjs from 'emailjs-com';
 export const Contact = () => {
   const [values, handleChangeValue, reset] = useForm({
-    user_name: "",
-    user_email: "",
-    message: "",
+    user_name: '',
+    user_email: '',
+    message: '',
   });
   const { user_name, user_email, message } = values;
 
@@ -25,13 +25,13 @@ export const Contact = () => {
     e.preventDefault();
     if (user_name && user_email && message) {
       emailjs.sendForm(
-        "service_bok4r4t",
-        "template_j9yehcy",
+        'service_bok4r4t',
+        'template_j9yehcy',
         e.target,
-        "user_kNqttFWtfqLvC8G4QTq4B"
+        'user_kNqttFWtfqLvC8G4QTq4B'
       );
       reset();
-      alert("Sent succesfully");
+      alert('Sent succesfully');
     }
   };
 
@@ -45,64 +45,64 @@ export const Contact = () => {
       <Box
         sx={{
           m: 3,
-          border: "1px solid",
-          borderColor: "primary.main",
-          textAlign: "center",
+          border: '1px solid',
+          borderColor: 'primary.main',
+          textAlign: 'center',
         }}
       >
         <CardHeader
-          sx={{ display: { xs: "none", sm: "block" } }}
-          title={<TypeWriter text={"Seend me a message"} />}
+          sx={{ display: { xs: 'none', sm: 'block' } }}
+          title={<TypeWriter text={'Seend me a message'} />}
         />
         <CardContent>
           <form
             onSubmit={handleSubmitMessage}
             style={{
-              display: "flex",
-              flexDirection: "column",
+              display: 'flex',
+              flexDirection: 'column',
             }}
           >
             <TextField
               value={user_name}
               onChange={handleChangeValue}
-              name="user_name"
-              id="outlined-basic"
-              label={<TypeWriter text={"Naame"} />}
-              variant="outlined"
+              name='user_name'
+              id='outlined-basic'
+              label={<TypeWriter text={'Naame'} />}
+              variant='outlined'
               sx={{ my: { md: 1 } }}
             />
             <TextField
               value={user_email}
               onChange={handleChangeValue}
-              name="user_email"
-              id="outlined-basic"
-              label={<TypeWriter text={"Eemail"} />}
-              variant="outlined"
+              name='user_email'
+              id='outlined-basic'
+              label={<TypeWriter text={'Eemail'} />}
+              variant='outlined'
               sx={{ my: { md: 1 } }}
-              type="email"
+              type='email'
             />
             <TextField
               value={message}
               onChange={handleChangeValue}
-              name="message"
-              id="outlined-basic"
+              name='message'
+              id='outlined-basic'
               multiline
               rows={5}
-              label={<TypeWriter text={"Meessage"} />}
-              variant="outlined"
+              label={<TypeWriter text={'Meessage'} />}
+              variant='outlined'
               sx={{ my: { md: 1 } }}
             />
-            <Tooltip title="This will send to my email adress">
-              <Button sx={{ my: { md: 1 } }} variant="contained" type="submit">
+            <Tooltip title='This will send to my email adress'>
+              <Button sx={{ my: { md: 1 } }} variant='contained' type='submit'>
                 <Typography>send</Typography>
               </Button>
             </Tooltip>
           </form>
-          <Box my={1} sx={{ display: "flex", justifyContent: "space-around" }}>
-            <Button href="https://www.linkedin.com/in/facundoleanez/">
+          <Box my={1} sx={{ display: 'flex', justifyContent: 'space-around' }}>
+            <Button href='https://www.linkedin.com/in/facundoleanez/'>
               <AiOutlineLinkedin size={40} />
             </Button>
-            <Button href="https://github.com/facundoleanez">
+            <Button href='https://github.com/facundoleanez'>
               <AiFillGithub size={40} />
             </Button>
           </Box>

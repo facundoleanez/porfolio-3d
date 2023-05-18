@@ -11,7 +11,7 @@ export const About = () => {
   return (
     <Card
       sx={{
-        opacity: 0.7,
+        opacity: 0.8,
         maxWidth: 600,
       }}
     >
