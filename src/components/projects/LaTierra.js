@@ -1,5 +1,13 @@
-import { Box, Button, Link, Modal, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  IconButton,
+  Link,
+  Modal,
+  Typography,
+} from '@mui/material';
 import React from 'react';
+import { IoMdCloseCircleOutline } from 'react-icons/io';
 
 export const LaTierra = () => {
   return (
@@ -48,7 +56,7 @@ export const ProjectInfo = () => {
             width: '100%',
             backgroundColor: 'black',
             color: 'primary.main',
-            p: 2,
+            p: 3,
             position: 'absolute',
             top: '50%',
             left: '50%',
@@ -56,6 +64,20 @@ export const ProjectInfo = () => {
             overflow: 'auto',
           }}
         >
+          <IconButton
+            edge='end'
+            color='inherit'
+            aria-label='close'
+            onClick={handleClose}
+            sx={{
+              position: 'absolute',
+              top: '0%',
+              right: '0%',
+              marginRight: 1,
+            }}
+          >
+            <IoMdCloseCircleOutline size={25} />
+          </IconButton>
           <Typography id='modal-modal-title' variant='h6' component='h2'>
             Interactive e-book for children
           </Typography>
