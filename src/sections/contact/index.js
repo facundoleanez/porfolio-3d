@@ -9,10 +9,10 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import { TypeWriter } from '../TypeWriter';
 import { AiOutlineLinkedin, AiFillGithub } from 'react-icons/ai';
 import { useForm } from '../../hooks/useForm';
 import emailjs from 'emailjs-com';
+import { TypeWriter } from '../../components/TypeWriter';
 export const Contact = () => {
   const [values, handleChangeValue, reset] = useForm({
     user_name: '',

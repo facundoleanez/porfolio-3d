@@ -1,11 +1,6 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardHeader,
-} from '@mui/material'
-import React from 'react'
-import { TypeWriter } from '../TypeWriter'
+import { Box, Card, CardContent, CardHeader } from '@mui/material';
+import React from 'react';
+import { TypeWriter } from '../../components/TypeWriter';
 
 export const About = () => {
   return (
@@ -17,7 +12,7 @@ export const About = () => {
     >
       <Box sx={{ m: 3, border: '1px solid', borderColor: 'primary.main' }}>
         <CardHeader
-          title={<TypeWriter text={'Naame: Facundo Leanez'} />}
+          title={<TypeWriter text={'Naame: Facundo Leanez'} variant={'h4'} />}
           subheader={<TypeWriter text={'Agge: 30'} />}
         />
         <CardContent>
@@ -38,5 +33,5 @@ export const About = () => {
         </CardContent>
       </Box>
     </Card>
-  )
-}
+  );
+};

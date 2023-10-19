@@ -10,11 +10,10 @@ import {
   Typography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Playnder } from '../projects/Playnder';
-import { AcuAberturas } from '../projects/AcuAberturas';
-import { LaTierra } from '../projects/LaTierra';
 import acuaberturas from '../../images/acuaberturas.jpg';
 import latierra from '../../images/latierra.jpg';
+import { AcuAberturas } from '../../components/projects/AcuAberturas';
+import { LaTierra } from '../../components/projects/LaTierra';
 
 export const Projects = () => {
   const [expanded, setExpanded] = React.useState(false);
